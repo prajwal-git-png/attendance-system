@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendance</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  </style>
+<style>
+* {
+  font-family: Poppins;
+}
+body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  text-align: center; /* Center text within container */
+  overflow: hidden; /* Hide scrollbar */
+}
+
+.container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+
+.attendance-table {
+  width: 80%; /* Set table width */
+  margin: 0 auto; /* Center the table horizontally */
+  border-collapse: collapse; /* Collapse border spacing */
+}
+
+.attendance-table th,
+.attendance-table td {
+  padding: 8px; /* Add padding to table cells */
+  border: 1px solid #ddd; /* Add border to table cells */
+}
+
+.attendance-table th {
+  background-color: #f2f2f2; /* Set background color for table header */
+}
+
+.attendance-table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Set background color for even rows */
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Attendance Data</h1>
+  <p><a href="/">Home</a></p>
+  <table class="attendance-table">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for record in attendance_data %}
+            <tr>
+                <td>{{ record[0] }}</td>
+                <td>{{ record[1] }}</td>
+                <td>{{ record[2] }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+</body>
+</html>

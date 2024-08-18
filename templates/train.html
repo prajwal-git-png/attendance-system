@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register & Train</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Register & Train</h1>
+    <form action="{{ url_for('train') }}" method="POST">
+        <label for="user_id">Register Number:</label>
+        <input type="text" id="user_id" name="user_id" required>
+        <label for="user_name">Name:</label>
+        <input type="text" id="user_name" name="user_name" required>
+        <button type="submit">Train</button>
+    </form>
+</body>
+</html>
